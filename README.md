@@ -1,3 +1,5 @@
+![](/assets/imgs/ico.png)
+
 ## Overview
 
 This site is built with Jekyll and hosted by Github Pages. You can find it at
