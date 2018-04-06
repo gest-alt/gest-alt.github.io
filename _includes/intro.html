@@ -5,9 +5,9 @@
 	</a>
   </div>
   <div class="bio__desc">{{ site.desc }}</div>
-  {% if site.data.social %}
-    <ul class="bio__social">
-      {% for item in site.data.social %}
+  {% if site.data.navigation %}
+    <ul class="bio__nav">
+      {% for item in site.data.navigation %}
         <li><a href="{{ item.url }}" target="_self">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
