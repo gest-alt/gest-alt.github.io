@@ -1,4 +1,4 @@
-![](/assets/imgs/ico.png)
+![](/assets/imgs/favicon.ico)
 
 ## Overview
 
