@@ -1,0 +1,40 @@
+.bio {
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
+.bio__header {
+  margin-bottom: 20px;
+  margin-top: 25px;
+  font-weight: 700;
+
+  a {
+  	text-decoration: none;
+
+  	&:hover {
+  		text-decoration: none;
+  	}
+  }
+}
+
+.bio__social {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+// media queries
+@include media-query($on-palm) {
+
+  .bio__header {
+    margin: 50px 0 25px;
+  }
+}
+
+@include media-query($on-laptop) {
+
+  .bio__header {
+    margin: 120px 0 50px;
+  }
+}

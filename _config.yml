@@ -1,0 +1,30 @@
+# site
+title: npb.space
+baseurl: ""
+url: "http://npb.space"
+favicon: "/assets/imgs/ico.png"
+g_analytics:
+
+# bio
+header: npb.space
+desc: >
+  I'm Nic Becker, an undergraduate student at Stanford University.
+  My academic interests include philosophy of mind, ethics of artificial intelligence,
+  and cosmology. Here you'll find some more info about me, my project blog, and
+  miscellaneous notes. You can get in touch with me at <a href="mailto:npbecker@stanford.edu"><i>npbecker@stanford.edu</i></a>
+
+# posts
+date_format: "%Y"
+post_title: Title
+post_date: Year
+post_cat: Type
+
+# post detail
+prev-next: true
+
+# build settings
+markdown: kramdown
+theme: louie
+exclude:
+  - Gemfile
+  - Gemfile.lock
