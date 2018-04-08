@@ -3,7 +3,7 @@ layout: post
 title:  Harmony and The Harmonograph
 author: Nic Becker
 category: Program
-img: https://imgur.com/p5mTEt6 
+img: https://imgur.com/p5mTEt6.png
 ---
 
 ![](https://i.imgur.com/FFVAFh1.gif)
