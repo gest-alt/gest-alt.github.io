@@ -8,14 +8,14 @@ img: https://imgur.com/p5mTEt6.png
 ![](https://imgur.com/0b4gMWj.png)
 *From [Harmonograph - A Visual Guide to the Mathematics of Music (Ashton)](https://www.scribd.com/doc/147969892/Anthony-Ashton-Harmonograph-A-Visual-Guide-to-the-Mathematics-of-Music-cleaned)*
 
-There's a secret visual beauty in the sound that pervades daily life. Distortions in the atmospheric soup form patterns, surfaces, and shapes that our eyes will never see. Even guessing at the 3d pressure patterns that emerge from playing a violin is mind-boggling.
+There's a secret visual beauty in the sounds that pervade daily life. Distortions in the atmospheric soup form patterns, surfaces, and shapes that our eyes will never see. Even guessing at the 3d pressure patterns that emerge from playing a violin is mind-boggling.
 
 Thankfully, sinusoids are everywhere in the physical world. And we can create something visual that is somewhat isometric to sounds and harmony. Some examples of this include [Chladni plates](https://www.youtube.com/watch?v=lRFysSAxWxI) and the [Kaleidophone](https://en.wikipedia.org/wiki/Kaleidophone).
 
 Harmonographs concern [**Lissajous figures**](https://en.wikipedia.org/wiki/Lissajous_curve), which I came across earlier this year in a wonderful video describing [just intonation and equal temperament](https://www.youtube.com/watch?v=6NlI4No3s0M). My program simulates both a lateral and rotary harmonograph (illustrated above) using different combinations of pendulums (see resources below).
 
 ![Cycling through some intervals on a lateral harmonograph](https://imgur.com/IgCSB3C.gif)
-*Cycling through some intervals on a lateral harmonograph.*
+*Cycling through some intervals on a lateral harmonograph*
 
 So how does this relate to music? Intervals are fundamental to how we think of notes, melody, and harmony. Every interval (e.g. a minor third, a perfect fifth) is measured by the ratio of two frequencies. If we allow the pendulums within a harmonograph to reflect these frequency ratios, beautiful symmetries arise. Note that all of the images here are the result of damped oscillation, meaning friction is simulated. Otherwise, we would only see one tracing of the lissajous curve.
 
