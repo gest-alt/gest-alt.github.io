@@ -13,4 +13,4 @@ img: https://imgur.com/p5mTEt6.png
 ![](https://imgur.com/4IB9Omv.png)
 ![](https://imgur.com/skcpxJh.png)
 ![](https://imgur.com/p5mTEt6.png)
-<img src="https://i.imgur.com/uQQ9XQW.jpg" style="width: 100px;"/> <img src="https://i.imgur.com/rZZhypa.jpg" style="width: 100px;"/>
+<img src="https://i.imgur.com/uQQ9XQW.jpg" style="width: 250px;"/> <img src="https://i.imgur.com/rZZhypa.jpg" style="width: 250px;"/>
