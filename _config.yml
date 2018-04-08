@@ -1,8 +1,10 @@
-# site
+# site and SEO
 title: npb.space
+author: Nic Becker
 baseurl: ""
 url: "http://npb.space"
 g_analytics:
+logo: "/assets/imgs/apple-touch-icon.png"
 
 # bio
 header: npb.space
@@ -27,3 +29,6 @@ markdown: kramdown
 exclude:
   - Gemfile
   - Gemfile.lock
+
+plugins:
+  - jekyll-seo-tag
