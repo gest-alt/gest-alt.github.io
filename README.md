@@ -3,7 +3,7 @@
 ## Overview
 
 This site is built with Jekyll and hosted by Github Pages. You can find it at
-[npb.space](http://npb.space). It is heavily based on [Louie](https://github.com/lllychen/louie)
+[npb.space](https://npb.space). It is heavily based on [Louie](https://github.com/lllychen/louie)
 by Lily Chen.
 
 

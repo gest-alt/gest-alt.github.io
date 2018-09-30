@@ -12,13 +12,14 @@ layout: compress
   <title>{{ site.title }}</title>
   <link rel="stylesheet" href="{{ "/assets/css/particles.css" | prepend: site.baseurl }}">
   {% include head.html %}
-  {% seo %}
+
 </head>
 <body>
   <div id="particles-js">
     <!-- Include intro -->
     <div class="container">
       {% include intro.html %}
+      {% seo %}
     </div>
   </div>
   <!-- scripts for particles -->
