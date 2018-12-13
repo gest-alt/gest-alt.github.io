@@ -6,7 +6,7 @@ category: Climbing
 img: https://i.imgur.com/ZKX5wSK.jpg
 ---
 
-![](https://lh3.googleusercontent.com/hyEAU2r9lvgD4vjoB9I2GNphl8rL3f-FyiaEDrklILvwwezwre9TRrsNpbCYspBIRL3O7-_sLvTsZ_w146y5nY6cxI6oy7UDlwM3UTxNxne8tQyrKmPK0046u3grDKJGbxfbgCsVrH4=w461-h614-no)
+![](https://lh3.googleusercontent.com/dEOicYm3uGliiyjJpOQLcl1eALoxEktnaH0BXodKbr1-WXa-mgbcy8CF60Z9OGh8kJ4_seYm5fFoEo6nvg17P_8mcjk4PofcimMKkHGg77gvCUT_ig3066RWSDbZAwSkCFe2Oa4oEqY=w1152-h1534-no)
 ![](https://lh3.googleusercontent.com/kwyQ2VHY0bpRT8UQzkwqyfJomp4fsLXUgK-IfJ9jw-f3pOIN3xdiU46uJVHD0mwoyw3ZO1xvVz3M4EmhmWjeR9hHmG9qkXus_rattXw-Ri7IuJoHPucNWV4Ec02KT7i6KQYu1Lmp-C0=w1440-h1082-no)
 ![](https://lh3.googleusercontent.com/jwb2fGmqlmeuytlrcttTYXLxM_rfsff9huYQ60PMON2zlO8WFVwki11ipHMWJXxGjSGQPAAbigKYi7KaZv_mHdmFfH_Pd7B52spDlhoNFZrCPOCwfAzKBtpytggX9jTSl7hClmVOj_o=w1152-h1534-no)
 ![](https://lh3.googleusercontent.com/CLKroKw4qE5izX9MXt3Thv4L03E6z526y1U6F9s1KhYeRiwdVtjptLSsN6I0sA7dgHtnTFyOzoo7XhxT7dvdMaPSOs3I9Uif45bmV4WIwOkyqnQ1i9lItOOzQ6k50WtqRruj9jqHPuQ=w1152-h1534-no)
