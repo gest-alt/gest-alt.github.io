@@ -9,10 +9,10 @@ logo: "/assets/imgs/apple-touch-icon.png"
 # bio
 header: npb.space
 desc: >
-  I'm Nic Becker, an undergraduate student at Stanford University.
-  Some of my academic interests include computational neuroscience, ethics of artificial intelligence,
-  and cosmology. Here you'll find some more info about me, my project blog, and
-  miscellaneous notes. You can get in touch with me at <a href="mailto:npbecker@stanford.edu"><i>npbecker@stanford.edu</i></a>
+  I'm Nic Becker, an undergraduate in Philosophy and Physics at Stanford. My interests
+  are a bit all over the place. Currently, I'm working in Shaul Druckmann's computational
+  neuroscience group. Here you'll find some more info about me, my project blog, and
+  miscellaneous notes. You can get in touch with me at npbecker [at] stanford [dot] edu
 
 # posts
 date_format: "%Y"
