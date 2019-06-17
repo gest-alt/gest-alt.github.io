@@ -3,12 +3,10 @@ layout: post
 title: DEMs and Lichtenberg figures
 author: Nic Becker
 category: digital fabrication
-img: http://i.imgur.com/wHX9aM3.jpg
+img: http://i.imgur.com/k8UpbPx.png
 ---
 
-![roughs](https://i.imgur.com/j82GYJQ.jpg)
-
-This is actually a gift for someone for the holidays, but I'm psyched on the design so I decided to write about it here.
+I built this little thing in high school and really liked how it turned out. Looking at topographic maps reminded me of the branching patterns of electrical breakdown and I had a and old microwave on my hands...
 
 The project entails two parts: 3D printed terrain and Lichtenberg figures/wood staining
 
@@ -52,10 +50,11 @@ The next step is to sand down the box to remove any unwanted burn marks and then
 
 ![](http://i.imgur.com/QtwY3wi.jpg)
 
-All done!
-
 Sanded with 220, 400, then 600 grit. One coat of Red Chesnut stain. Three coats of clear gloss polyurethane.
 
+and the original idea for reference:
+
+![roughs](https://i.imgur.com/j82GYJQ.jpg)
 
 ### Resources
 
