@@ -2,7 +2,7 @@
 layout: post
 title: Higgs in a Hurry
 author: Nic Becker
-category: Site
+category: explainer
 img: https://i.imgur.com/XHb15Gj.png
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Atlaniakea.io
 author: Nic Becker
-category: Site
+category: projects
 img: https://i.imgur.com/nY7VKyU.jpg
 ---
 

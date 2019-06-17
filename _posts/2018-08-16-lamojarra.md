@@ -2,7 +2,7 @@
 layout: post
 title: Mojarra
 author: Nic Becker
-category: Climbing
+category: climbing
 img: https://i.imgur.com/ZKX5wSK.jpg
 ---
 
