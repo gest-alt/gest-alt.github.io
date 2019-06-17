@@ -2,7 +2,7 @@
 layout: post
 title:  Harmony and The Harmonograph
 author: Nic Becker
-category: simulation
+category: art
 img: https://imgur.com/p5mTEt6.png
 ---
 ![](https://imgur.com/0b4gMWj.png)
