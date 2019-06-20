@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Atlanta, Inequality, and The End of Suburban White Flight?
+title: Atlanta, Residential Segregation, and The End of Suburban White Flight?
 author: Nic Becker
 category: visualization
 img: https://i.imgur.com/Dr4OSKJ.png
