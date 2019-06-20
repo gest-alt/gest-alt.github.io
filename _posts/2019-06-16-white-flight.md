@@ -9,7 +9,7 @@ mathjax: true
 
 This is a working draft motivated by Kevin M. Kruse's book [White Flight: Atlanta and the Making of Modern Conservatism](https://press.princeton.edu/titles/8043.html), [Brookings analysis on income inequality](https://www.brookings.edu/research/city-and-metropolitan-income-inequality-data-reveal-ups-and-downs-through-2016/), and my birth(place).
 
-It began as a visualization exercise, but I'm slowly working towards a report true to the title.
+It began as a visualization exercise, but I'm slowly working towards something true to the title.
 
 
 Todo:
