@@ -19,7 +19,6 @@ Todo:
 * map residential segregation by economic outcomes
 * generate diversity maps for more decades and animate them
 * recreate HOLC's "Residential Security Map" in Mapbox
-*
 
 (last updated: 06.19.2019)
 
@@ -111,14 +110,12 @@ diversity, respectively.
   window.onload=function()
   {
       previous = document.getElementById("yearselector").value;
-      console.log(previous);
   }
 
   dropdown.addEventListener('change', (e) => {
     var clicked_year = e.target.value;
     e.preventDefault();
     e.stopPropagation();
-    console.log(clicked_year);
     map.setLayoutProperty(clicked_year, 'visibility', 'visible');
     map.setLayoutProperty(previous, 'visibility', 'none');
     previous = clicked_year
