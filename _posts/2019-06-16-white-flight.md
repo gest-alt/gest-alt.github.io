@@ -176,7 +176,7 @@ Racist housing policy also had a significant role in shaping Atlanta's current d
 
 ![](https://www.atlantastudies.org/wp-content/uploads/2017/08/Rhodes_HOLC-Scan.jpg)
 
-> [Source: Geographies of Privilege and Exclusion, Jason Rhodes](https://www.atlantastudies.org/2017/09/07/jason-rhodes-geographies-of-privilege-and-exclusion-the-1938-home-owners-loan-corporation-residential-security-map-of-atlanta/)
+> Source: [Geographies of Privilege and Exclusion, Jason Rhodes](https://www.atlantastudies.org/2017/09/07/jason-rhodes-geographies-of-privilege-and-exclusion-the-1938-home-owners-loan-corporation-residential-security-map-of-atlanta/)
 
 It's interesting to consider this map with 2017 demographics in mind:
 
