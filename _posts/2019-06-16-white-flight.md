@@ -103,10 +103,6 @@ diversity, respectively.
   const diversity_dropdown = document.getElementById('diversityselector');
 
   var previous_diversity;
-  window.onload=function()
-  {
-      previous_diversity = document.getElementById("diversityselector").value;
-  }
 
   diversity_dropdown.addEventListener('change', (e) => {
     var clicked_year = e.target.value;
@@ -152,6 +148,7 @@ diversity, respectively.
   window.onload=function()
   {
       previous = document.getElementById("yearselector").value;
+      previous_diversity = document.getElementById("diversityselector").value;
   }
 
   dropdown.addEventListener('change', (e) => {
