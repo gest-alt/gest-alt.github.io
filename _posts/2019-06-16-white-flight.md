@@ -17,12 +17,10 @@ Todo:
 * add charts showing the significant population increases in Hispanic and Asian populations between 2000 and 2010
 * map residential segregation by income
 * map residential segregation by economic outcomes
-* generate diversity maps for more decades and animate them
-* recreate HOLC's "Residential Security Map" in Mapbox
 
-(last updated: 06.19.2019)
+(last updated: 06.20.2019)
 
-### Legend to these maps
+### How to read these maps
 
 ![Legend](https://i.imgur.com/qUMYeRF.png)
 
@@ -75,7 +73,51 @@ $$H = \sum_{i = 1}^{N}\Big[\frac{t_i(E-E_i)}{ET}\Big]$$
 the number of tracts, and E<sub>i</sub> and E represent tract i's diversity (entropy) and metropolitan area
 diversity, respectively.
 
+ <!-- static map:
 <img alt='static Mapbox map test' src='https://api.mapbox.com/styles/v1/npbecker/cjx0w4ro28y5x1dozr9cnor9o/static/-84.3880,33.7490,8.5/600x400@2x?access_token=pk.eyJ1IjoibnBiZWNrZXIiLCJhIjoiY2p1aTBub2I2MTVuejQzbWZxMXRkb2h2ZSJ9.aw6eHFpggwgWAFAbOKMP7Q'>
+-->
+
+<div style="position:relative; width:100%; height:400px;">
+  <div id='diversity_map' style = "position:absolute; top:0; bottom:0; width:100%;"></div>
+  <select id="diversityselector" style = "position:absolute; top:10px; left:10px; outline: none; font-family: inconsolata; border: 8px solid transparent">
+    <option class="year1" value="2017-diversity">2017</option>
+    <option class="year2" value="2010-diversity">2010</option>
+    <option class="year3" value="2000-diversity">2000</option>
+    <option class="year4" value="1990-diversity">1990</option>
+  </select>
+</div>
+
+> Demographic data for 1990, 2000, and 2010 were taken from the decennial census. Data for 2017 uses population estimates from the 5-year American Community Survey.
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibnBiZWNrZXIiLCJhIjoiY2p1aTBub2I2MTVuejQzbWZxMXRkb2h2ZSJ9.aw6eHFpggwgWAFAbOKMP7Q';
+  var diversity_map = new mapboxgl.Map({
+    container: 'diversity_map', // container id
+    style: 'mapbox://styles/npbecker/cjx0w4ro28y5x1dozr9cnor9o', // stylesheet location
+    center: [-84.3880, 33.7490], // starting position [lng, lat]
+    zoom: 8.65 // starting zoom
+  });
+
+  diversity_map.addControl(new mapboxgl.FullscreenControl());
+
+  const diversity_dropdown = document.getElementById('diversityselector');
+
+  var previous_diversity;
+  window.onload=function()
+  {
+      previous_diversity = document.getElementById("diversityselector").value;
+  }
+
+  diversity_dropdown.addEventListener('change', (e) => {
+    var clicked_year = e.target.value;
+    console.log(clicked_year);
+    e.preventDefault();
+    e.stopPropagation();
+    diversity_map.setLayoutProperty(clicked_year, 'visibility', 'visible');
+    diversity_map.setLayoutProperty(previous_diversity, 'visibility', 'none');
+    previous_diversity = clicked_year
+  });
+</script>
 
 ### Dot distribution maps for the past 30 years
 
@@ -138,5 +180,102 @@ Racist housing policy also had a significant role in shaping Atlanta's current d
 ![](https://www.atlantastudies.org/wp-content/uploads/2017/08/Rhodes_HOLC-Scan.jpg)
 
 > [Source: Geographies of Privilege and Exclusion, Jason Rhodes](https://www.atlantastudies.org/2017/09/07/jason-rhodes-geographies-of-privilege-and-exclusion-the-1938-home-owners-loan-corporation-residential-security-map-of-atlanta/)
+
+It's interesting to consider this map with 2017 demographics in mind:
+
+<style>
+  .map-overlay {
+  	font: bold 12px/20px 'inconsolata';
+  	position: absolute;
+  	width: 30%;
+  	top: 0;
+  	left: 0;
+  	padding: 10px;
+  }
+
+  .map-overlay .map-overlay-inner {
+  	background-color: #fff;
+  	border-radius: 3px;
+  	padding: 5px 10px 5px 10px;
+  	margin-bottom: 10px;
+  }
+
+  .map-overlay label {
+  	display: block;
+  	margin: 0 0 0px;
+  }
+
+  .map-overlay input {
+  	background-color: transparent;
+  	display: inline-block;
+  	width: 100%;
+  	position: relative;
+  	margin: 0;
+  	cursor: ew-resize;
+  }
+</style>
+
+<div style="position:relative; width:100%; height:400px;">
+  <div id='overlay_map' style = "position:absolute; top:0; bottom:0; width:100%;"></div>
+  <div class='map-overlay top'>
+    <div class='map-overlay-inner'>
+      <label>Overlay opacity: <span id='slider-value'>75%</span></label>
+      <input id='slider' type='range' min='0' max='100' step='0' value='75' />
+    </div>
+  </div>
+</div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoibnBiZWNrZXIiLCJhIjoiY2p1aTBub2I2MTVuejQzbWZxMXRkb2h2ZSJ9.aw6eHFpggwgWAFAbOKMP7Q';
+  var overlay_map = new mapboxgl.Map({
+    container: 'overlay_map', // container id
+    style: 'mapbox://styles/npbecker/cjx0u2s8o9lle1dpqpuwtiutp', // stylesheet location
+    center: [-84.3730, 33.7720], // starting position [lng, lat]
+    zoom: 10.0 // starting zoom
+  });
+
+  y2 = 33.852824;
+  y1 = 33.689320;
+  x1 = -84.487325;
+  x2 = -84.250155;
+
+  overlay_map.on('load', function() {
+      overlay_map.addSource("HOLC-map", {
+          "type": "image",
+          "url": "https://i.imgur.com/ovuvNJi.png",
+          "coordinates": [
+              [x1, y2],
+              [x2, y2],
+              [x2, y1],
+              [x1, y1]
+          ]
+      });
+
+      overlay_map.addLayer({
+          "id": "overlay",
+          "source": "HOLC-map",
+          "type": "raster"
+      }, "road-label");
+
+      overlay_map.setPaintProperty('overlay', 'raster-opacity', parseInt(75, 10) / 100);
+
+      slider.addEventListener('input', function(e) {
+      // Adjust the layers opacity. layer here is arbitrary - this could
+      // be another layer name found in your style or a custom layer
+      // added on the fly using `addSource`.
+      overlay_map.setPaintProperty('overlay', 'raster-opacity', parseInt(e.target.value, 10) / 100);
+
+      // Value indicator
+      sliderValue.textContent = e.target.value + '%';
+      });
+
+  });
+
+  overlay_map.addControl(new mapboxgl.FullscreenControl());
+
+  var slider = document.getElementById('slider');
+  var sliderValue = document.getElementById('slider-value');
+
+</script>
 
 My maps were inspired by the [Washington Post](https://www.washingtonpost.com/graphics/2018/national/segregation-us-cities/).
