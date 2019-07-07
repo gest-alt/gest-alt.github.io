@@ -1,14 +1,12 @@
 ---
 layout: post
-title: DEMs and Lichtenberg figures
+title: Tribute to fractal geometry
 author: Nic Becker
 category: digital fabrication
 img: http://i.imgur.com/k8UpbPx.png
 ---
 
-I built this little thing in high school and really liked how it turned out. Looking at topographic maps reminded me of the branching patterns of electrical breakdown and I had a and old microwave on my hands...
-
-The project entails two parts: 3D printed terrain and Lichtenberg figures/wood staining
+Looking at topographic maps reminded me of the branching patterns of electrical breakdown in material or air. The project entails two parts: 3D printed terrain and Lichtenberg figures/wood staining.
 
 The terrain maps shown below are located at Tallulah Gorge State Park in north Georgia. Since the area isn't actually that big, or deep, finding decent elevation data was tricky.
 
