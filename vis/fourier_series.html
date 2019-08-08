@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- Updated: Aug 8 2019 -->
+<!-- based on https://bl.ocks.org/jinroh/7524988 -->
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+  html, body {
+     margin: 0;
+     padding: 0;
+  }
+  form {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .axis {
+    stroke: hsla(0, 0%, 70%, 0.5);
+  }
+  .unit .orbit {
+    fill: none;
+    stroke: hsla(0, 0%, 30%, 0.75);
+  }
+  .unit .dot {
+    fill: hsla(334, 54%, 28%, 0.25);
+  }
+  .unit.last .dot {
+    fill: hsla(334, 54%, 28%, 1.0);
+  }
+  .unit.last .orbit {
+    fill: none;
+  }
+  .unit.first .dot {
+    fill: none;
+  }
+  .unit.first .orbit{
+    stroke: hsl(0, 0%, 70%);
+  }
+  .graph {
+    fill: none;
+    stroke: hsla(334, 54%, 28%, 1.0);
+    stroke-width: 2px;
+  }
+
+</style>
+</head>
+
+<body>
+  <div id="vis">
+    <form>
+      <input id="size" type="number" value="9" min="1" max="40" step="1">
+    </form>
+  </div>
+
+  <script src="http://d3js.org/d3.v5.min.js"></script>
+  <script>
+  (function() {
+    // ** SETUP **
+
+    // axes and container variables
+    var  W, H, r = 3, R = 75, iters = 9, xmax = 25, rate = 1/1200, delta, last, data = [], container, graph, svg, axes;
+
+    function initialize() {
+
+      console.log('initialized')
+
+      W = window.innerWidth;
+      H = window.innerHeight;
+
+      // reset
+      d3.selectAll("svg").remove()
+
+      // insert svg
+      svg = d3.select("#vis").insert("svg")
+        .attr("width", W).attr("height", H)
+
+      axes = [
+        { x1: 0, x2: W, y1: H/2, y2: H/2 },
+        { x1: W/3, x2: W/3, y1: 0, y2: H }
+      ];
+
+      // create axes
+      svg.selectAll("line")
+          .data(axes)
+        .enter().each(function(d, i) {
+            d3.select(this).append("line").attr("class", "axis")
+              .attr("x1", d.x1).attr("x2", d.x2)
+              .attr("y1", d.y1).attr("y2", d.y2);
+         });
+
+      // create container for circles
+      container = svg.append("g")
+        .attr("transform", "translate(" + W/3 + "," + H/2 + ")")
+
+      // create graph path
+      graph = container.append("path").attr("class", "graph");
+    }
+
+    //window.addEventListener("resize", initialize());
+    initialize();
+
+    // dots(): returns selection of dots bound to their respective radii
+    function get_units() {
+      data = d3.range(0, iters).map(get_position)
+      data.unshift({x: 0, y: 0, r: 0}); // To-do: change the get_position function such that this happens automatically
+      var units = container.selectAll(".unit").data(data)
+      // exit
+      units.exit().remove()
+
+      // enter
+      var enter = units.enter().append("g").attr("class", "unit");
+      enter.append("circle").attr("class", "orbit").attr("r", function(d) { return d.r; });
+      enter.append("circle").attr("class", "dot").attr("r", r);
+
+      //update
+      units.classed("last", function(d, i) { return i === iters; });
+      units.classed("first", function(d, i) { return i === 0; });
+
+      return units;
+    }
+
+    // Determines position from Fourier series
+    // To use with array mapped to function
+    function get_position(d, i) {
+      var pos = {x:0, y:0, r:0};//{prev_x:0, prev_y:0, x:0, y:0, r:0};
+      var coeff;
+
+      for (n = 1; n <= i+1; n++) {
+        // To-do: implement coefficient function
+        coeff = (((n + 1) % 2) ? 0 : 1) * 4 / (n * Math.PI);
+        //console.log(pos.x, pos.y)
+        pos.x += coeff * R * Math.cos(n * delta);
+        pos.y += coeff * R * Math.sin(n * delta);
+      }
+      pos.r = coeff * R
+      return pos
+    }
+
+    // Transform parameters to step dots forward
+    function step_dots(d, i) {
+      return "translate(" + d.x + "," + -d.y + ")";
+    }
+
+    // Transform parameters to step orbits forward
+    function step_orbits(d, i) {
+      if (i == 0) {
+        return "translate(" + 0 + "," + 0 + ")";
+      } else {
+        return "translate(" + data[i-1].x + "," + -data[i-1].y + ")";
+      }
+    }
+
+    // ** GRAPH **
+
+    function get_graph_y(d, i) {
+      var y = 0;
+      var coeff;
+      for (n = 1; n <= iters; n++) {
+        coeff = (((n + 1) % 2) ? 0 : 1) * 4 / (n * Math.PI);
+        y += coeff * R * Math.sin(n * d);
+      }
+      return y
+    }
+
+    var graph_domain = d3.range(0, xmax, xmax / 1000);
+
+    var graph_path = container.append("path").attr("class", "graph");
+
+    var xAxis = d3.scaleLinear()
+        .domain([0, xmax])
+        .range([0, W]);
+
+    var graph_line = d3.line()
+        .x(function(d) { return xAxis(d); })
+        .y(function(d) { return get_graph_y(d - delta); });
+
+    // ** PROJECTION **
+
+    var proj_path = container.append("path").attr("class", "graph");
+
+    var proj_line = d3.line()
+      .x(function(d) { return d.x; })
+      .y(function(d) { return -d.y; });
+
+    // ** ANIMATION **
+
+    var t0 = d3.now();
+
+    d3.timer(function() {
+      delta = d3.now() - t0;
+      delta = delta * rate
+
+      units = get_units()
+      units.select(".dot").attr("transform", step_dots)
+      units.select(".orbit").attr("transform", step_orbits)
+
+      graph_path.attr("d", graph_line(graph_domain));
+
+      last = data[data.length - 1];
+      proj_path.attr("d", proj_line([last, {x:0, y:last.y}]));
+    });
+
+    d3.select("#size").on("change", function() { iters = +this.value; });
+
+
+    // times = 0
+    // var t = d3.timer(function(elapsed) {
+    //   times += 1
+    //   console.log(times);
+    //   dots().select(".dot").attr("transform", step_dots)
+    //   if (elapsed > 5) t.stop();
+    // }, 150);
+
+
+  })();
+  </script>
+
+</body>
+</html>
