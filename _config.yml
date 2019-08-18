@@ -9,10 +9,7 @@ logo: "/assets/imgs/apple-touch-icon.png"
 # bio
 header: npb.space
 desc: >
-  I'm Nic Becker, an undergraduate in Philosophy and Physics at Stanford. I'm
-  currently working in Shaul Druckmann's computational neuroscience group. Here you'll find
-  some more info about me, my project blog, and miscellaneous notes. You can get in
-  touch with me at myname [at] stanford [dot] edu
+  nicbecker [at] stanford [dot] edu
 
 # posts
 date_format: "%Y"
