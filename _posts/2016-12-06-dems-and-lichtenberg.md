@@ -34,7 +34,7 @@ If you look at the first DEM image above, the terrain patterns branch recursivel
 
 I finally managed to fully print the terrain map in gold/green ABS filament. Problems with warping and plate adhesion required me to attempt the print several times over the course of a few days. It was a pain to do over exam week, but I'm really happy with how it turned out.
 
-![](https://media.giphy.com/media/CHWSuxyTtWQW4/giphy.gif)
+![](https://media.giphy.com/media/L18GL7D1GxUfNQ7au0/giphy.gif)
 
 The lichtenberg figures also turned out pretty nice. There are a few visual cues that indicate the cool pattern/too burnt line that took me a few attempts to pick up on. I may try it again on a different box for the final gift.
 
